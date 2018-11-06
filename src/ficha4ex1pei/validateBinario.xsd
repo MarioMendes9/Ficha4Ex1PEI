@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    
+    
+    <xs:element name="binario">
+        <xs:complexType>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="zero" type="zero"/>
+                <xs:element name="um" type="um"/> 
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+
+
+
+    <xs:simpleType name="zero">
+        
+            <xs:restriction base="xs:integer">
+                <xs:pattern value="[0]"/>
+            </xs:restriction>
+        
+    </xs:simpleType>
+    
+    <xs:simpleType name="um">
+       
+            <xs:restriction base="xs:integer">
+                <xs:pattern value="[1]"/>
+            </xs:restriction>
+        
+    </xs:simpleType>
+    
+</xs:schema>
