@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           xmlns="www.monte.pt"
+           targetNamespace="www.monte.pt"
+           
+            >
+    
+    <xs:complexType name="monte" abstract="true">
+        <xs:sequence>
+            
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="monte">
+        <xs:complexContent>
+            <xs:extension base="monte">
+                <xs:sequence>
+                    <xs:element name="nome" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    
+     <xs:complexType name="monte">
+        <xs:complexContent>
+            <xs:extension base="monte">
+                <xs:sequence>
+                    <xs:element name="nome" type="xs:string"/>
+                    <xs:element name="regiao" type="xs:string"/>
+                    <xs:element name="altura" type="altura"/>
+                        
+                    
+                        
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="altura">
+        <xs:sequence>
+            <xs:element name=/>
+        </xs:sequence>
+        <xs:attribute name="unidadeMedida" type="Medida" use="required"/>
+    </xs:complexType>
+
+   
+
+
+    <xs:simpleType name="Medida">
+        <xs:restriction base="xs.string">
+            <xs:enumeration value="metro"/>
+            <xs:enumeration value="km"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
